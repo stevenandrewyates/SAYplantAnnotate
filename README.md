@@ -10,8 +10,8 @@ Much of my job is searching for what genes do. It's fun looking them up on TAIR 
 First navigate (`cd`) to your *SCRATCH* directory (on euler) the make a directory (`mkdir`) for your data; finally change into this directory.
 ```
 cd $SCRATCH
-mkdir KYUSSannotate
-cd KYUSSannotate/
+mkdir annotate
+cd annotate/
 ```
 
 Next let's download (`wget`) and install (`module load`) the things we need: this includes `blast` and this `git` repository. Also we need the gene ontology (*ATH_GO_GOSLIM.txt*) data and proteins (*TAIR10_pep_20101214*) for arabidopsis.
