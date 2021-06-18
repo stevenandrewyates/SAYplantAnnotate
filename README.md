@@ -3,7 +3,7 @@
 A pipeline for assigning functional annotation to plant proteins.
 
 # Description
-Much of my job is searching for what genes do. It's fun looking them up on TAIR and seeing if they match the phenotype I'm working on. But sometimes this isn't enough you need to annotate a whole bunch of them. Maybe a whole genome of them. This repository will annotate proteins using TAIR, arabidopsis. Why TAIR you ask? Most work in plants is done in Arabidopsis, in fact > 37% of protein annotation comes from direct experimental evidence. Meaning somebody in a labcoat has actually worked on this. So why not use this? Everything else is inferred from TAIR, so cut out the middle man/woman/plant and go directly to the source of the annotation. The pipeline below works on Euler and will make a nice table with the corresponding best BLAST hit from TAIR and its associated GOterms (ready formatted for TopGO).
+Much of my job is searching for what genes do. It's fun looking them up on [**TAIR**](https://www.arabidopsis.org/index.jsp) and seeing if they match the phenotype I'm working on. But sometimes this isn't enough, you need to annotate a whole bunch of them. Maybe a whole genome of them. This repository will annotate proteins using TAIR, arabidopsis. Why TAIR you ask? Most work in plants is done in Arabidopsis, in fact > 37% of protein annotation comes from [direct experimental evidence](https://www.arabidopsis.org/portals/genAnnotation/functional_annotation/go.jsp). Meaning somebody in a labcoat has actually worked on this. So why not use this? Everything else is inferred from TAIR, so cut out the middle man/woman/plant and go directly to the source of the annotation. The pipeline below works on Euler and will make a nice table with the corresponding best [BLAST](https://pubmed.ncbi.nlm.nih.gov/2231712/) hit from TAIR and its associated [GOterms](http://geneontology.org/docs/ontology-documentation/) (ready formatted for TopGO).
 
 # Annotating using TAIR
 
@@ -70,7 +70,7 @@ Voila
 Previously proteins were functionally annotated based on similarity with other proteins (arabidopsis). However, arabidopsis doesn't have everything, plants evolve and diverge. So to get a holistic overview of protein function we will use a motif scanning tool to find functional domains in the proteins: using [Interproscan](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3998142/). There are many different kinds of motifs (types of proteins) and different ways of scanning these motifs. InterProscan provides a one-stop-shop for protein classification, where all the signatures produced by the different member databases are placed into entries within the InterPro database
 
 
-For this work I was using a linux workstation (the one ending in 2). Unfortunatley I couldn't get this to work on the Euler computer (this process is not run often so it was difficult to justify spending extra time on getting it to work on Euler). Anyway to begin we will download the tools needed, they include: Java version 11, Interproscan and this repository.
+For this work I was using a linux workstation (Fedora, the one ending in 2). Unfortunatley I couldn't get this to work on the Euler computer (this process is not run often, so it was difficult to justify spending extra time on getting it to work on Euler). Anyway to begin we will download the tools needed, they include: Java version 11, Interproscan and this repository.
 
 ```
 sudo dnf install java-11-openjdk.x86_64
@@ -95,7 +95,7 @@ Interproscan (v.5.52-86.0) requires Java 11, which was downloaded above. However
 sudo alternatives --config java
 ```
 
-Now interproscan can be used. In this case using the six coffeee genes included in this repository.
+Now Interproscan can be used. In this case using the six coffeee genes included in this repository.
 ```
 ./interproscan.sh -i  SAYplantAnnotate/CoffeeGenes.fasta -o Interout.txt -f tsv
 ```
